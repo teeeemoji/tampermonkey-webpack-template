@@ -1,0 +1,30 @@
+{
+  "name": "tampermonkey-webpack-template",
+  "version": "1.0.0",
+  "description": "a-simple-template-for-tampermonkey",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Everything is fine.  No tests here.\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teeeemoji/tampermonkey-webpack-template.git"
+  },
+  "keywords": [
+    "webpack",
+    "template",
+    "html-webpack-plugin",
+    "index.html",
+    "index.ejs",
+    "tampermonkey"
+  ],
+  "author": "teeeemoji <teeeemoji@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teeeemoji/tampermonkey-webpack-template/issues"
+  },
+  "homepage": "https://github.com/teeeemoji/tampermonkey-webpack-template#readme",
+  "peerDependencies": {
+    "html-webpack-plugin": "2.x || ^3"
+  }
+}

@@ -1,0 +1,47 @@
+// ==UserScript==
+// @name         <%= htmlWebpackPlugin.options.scriptName %>
+// @namespace    <%= htmlWebpackPlugin.options.namespace %>
+// @version      <%= htmlWebpackPlugin.options.version %>
+// @description  <%= htmlWebpackPlugin.options.description %>
+// @author       <%= htmlWebpackPlugin.options.author %>
+// @include      <%= htmlWebpackPlugin.options.include %>
+// @exclude      <%= htmlWebpackPlugin.options.exclude %>
+// @match      <%= htmlWebpackPlugin.options.match %>
+// ==/UserScript==
+// 创建 DOM 节点
+function createDom(type, props, style) {
+    const dom = document.createElement(type)
+    Object.assign(dom, props)
+    Object.assign(dom.style, style)
+    return dom
+}
+// 创建 css link
+function createCssLink(href) {
+    document.head.append(
+        createDom('link', {
+            as: 'style',
+            rel: 'stylesheet',
+            type: 'text/css',
+            href: href
+        })
+    )
+}
+// 创建 script 标签
+function createScripTag(src) {
+    document.body.append(
+        createDom('script',{
+            src: src
+        })
+    )
+}
+
+<% var item,
+        key %>
+<% cssList = htmlWebpackPlugin.files.css || [] %>
+<% jsList = htmlWebpackPlugin.files.js || [] %>
+<% for (item of cssList) { %>
+createCssLink("<%= item %>")
+<% } %>
+<% for (item of jsList) { %>
+createScripTag("<%= item %>")
+<% } %>
